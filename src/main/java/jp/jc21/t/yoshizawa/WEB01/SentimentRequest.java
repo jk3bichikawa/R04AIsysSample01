@@ -21,7 +21,7 @@ public class SentimentRequest extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.getRequestDispatcher("/WEB-INF/jsp/Sentiment.jsp").forward(request, response);
+		request.getRequestDispatcher("/jsp/Sentiment.jsp").forward(request, response);
 	}
 
 }

@@ -26,9 +26,13 @@ public class SentimentalResultServlet extends HttpServlet {
 
 		try {
 			Senti result = Sentiment.getSentiment(string);
-			confidenceScores message = result.documents[0].confidenceScores;
-			request.setAttribute("message", message);
-			request.getRequestDispatcher("/WEB-INF/jsp/result.jsp").forward(request, response);
+			double negative = result.documents[0].confidenceScores.negative;
+			request.setAttribute("negative", negative);
+			double neutral = result.documents[0].confidenceScores.neutral;
+			request.setAttribute("neutral", neutral);
+			double positive = result.documents[0].confidenceScores.positive;
+			request.setAttribute("positive", positive);
+			request.getRequestDispatcher("/jsp/bunseki.jsp").forward(request, response);
 		} catch (URISyntaxException e) {
 			e.printStackTrace();
 		} catch (InterruptedException e) {
