@@ -1,6 +1,7 @@
 package jp.jc21.t.yoshizawa.WEB01;
 
 import java.io.IOException;
+import java.net.InetSocketAddress;
 import java.net.URISyntaxException;
 import java.util.HashMap;
 import java.util.Map;
@@ -36,10 +37,10 @@ public class Sentiment {
 
 		String jsonData = new Gson().toJson(src);
 
-		//InetSocketAddress proxy = new InetSocketAddress("172.17.0.2", 80);
+		InetSocketAddress proxy = new InetSocketAddress("172.17.0.2", 80);
 
-		//JsonReader reader = WebApiConnector.postJsonReader(url, proxy, map, jsonData);
-		JsonReader reader = WebApiConnector.postJsonReader(url,map,jsonData);
+		JsonReader reader = WebApiConnector.postJsonReader(url, proxy, map, jsonData);
+		//JsonReader reader = WebApiConnector.postJsonReader(url,map,jsonData);
 		Senti message = null;
 		if (reader != null) {
 			message = gson.fromJson(reader, Senti.class);
@@ -70,49 +71,7 @@ class confidenceScores {
 	double positive;
 }
 
-//class sentence {
-//	targets[] targets;
-//	confidenceScores confidenceScores;
-//	int length;
-//	int offset;
-//	assessments[] assessments;
-//	String sentiment;
-//	String text;
-//}
 
-//class confidenceScoressentence{
-//	double negative;
-//	double neutral;
-//	double positive;
-//}
-
-//class targets {
-//	confidenceScores confidenceScores;
-//	int length;
-//	int offset;
-//	relations[] relations;	
-//	String sentiment;
-//	String text;
-//}
-
-//class confidenceScorestarget{
-//	double negative;
-//	double positive;
-//}
-
-//class assessments{
-//	confidenceScores confidenceScores;
-//	boolean isNegated;
-//	int length;
-//	int offset;
-//	String sentiment;
-//	String text;
-//}
-
-//class confidenceScoresassessments{
-//	double negative;
-//	double positive;
-//}
 
 //class relations{
 //	String ref;

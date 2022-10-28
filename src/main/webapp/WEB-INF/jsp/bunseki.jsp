@@ -9,22 +9,22 @@
 </head>
 <%
 	Object o =request.getAttribute("negative");
-	float negative = (float)o;
+	double negative = (double)o;
 
 	Object p =request.getAttribute("neutral");
-	float neutral = (float)p;
+	double neutral = (double)p;
 	
 	Object q =request.getAttribute("positive");
-	float positive = (float)q;
+	double positive = (double)q;
 
 %>
 
 <body>
 <H1>Sentiment</H1>
 <ul>
-	<li>Positive:<%= negative %></li>
+	<li>negative:<%= negative %></li>
 	<li>Neutral：<%= neutral %></li>
-	<li>Negative:<%= positive%></li>
+	<li>positive:<%= positive%></li>
 </ul>
 </body>
 </html>

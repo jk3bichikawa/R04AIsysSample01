@@ -32,7 +32,7 @@ public class SentimentalResultServlet extends HttpServlet {
 			request.setAttribute("neutral", neutral);
 			double positive = result.documents[0].confidenceScores.positive;
 			request.setAttribute("positive", positive);
-			request.getRequestDispatcher("/jsp/bunseki.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/jsp/bunseki.jsp").forward(request, response);
 		} catch (URISyntaxException e) {
 			e.printStackTrace();
 		} catch (InterruptedException e) {
