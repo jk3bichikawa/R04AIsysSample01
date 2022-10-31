@@ -26,6 +26,9 @@ public class SentimentalResultServlet extends HttpServlet {
 
 		try {
 			Senti result = Sentiment.getSentiment(string);
+			String moto = result.documents[0].confidenceScores.name;
+			request.setAttribute("moto", moto);
+			
 			double negative = result.documents[0].confidenceScores.negative;
 			request.setAttribute("negative", negative);
 			double neutral = result.documents[0].confidenceScores.neutral;
