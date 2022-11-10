@@ -12,7 +12,7 @@ import com.google.gson.stream.JsonReader;
 public class Sentiment {
 
 	public static void main(String[] args) throws IOException, URISyntaxException, InterruptedException {
-		Senti message = getSentiment("めっちゃ楽しい！！");
+		Senti message = getSentiment("普通に家に帰るっす");
 		if (message != null) {
 			System.out.println("negative : " + message.documents[0].confidenceScores.negative);
 			System.out.println("neutral : " + message.documents[0].confidenceScores.neutral);
